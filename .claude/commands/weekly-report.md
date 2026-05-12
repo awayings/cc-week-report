@@ -42,8 +42,8 @@ cc-weekly [--days N | --week YYYY-MM-DD] [--force]
   AI 开发周报  2026-05-05 ~ 2026-05-12
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Total: 16 sessions | Input 2.33M tokens | Output 157K tokens
-Avg Duration: 22.4 min | Cost: $9.35 | I/O Ratio: 14.8
+会话总数: 16 | 输入: 2.33M tokens | 输出: 157K tokens
+平均时长: 22.4 min | 成本: $9.35 | 输入输出比: 14.8
 
 ── 流畅度仪表板 ──
 
