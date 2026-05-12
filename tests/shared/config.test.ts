@@ -40,6 +40,11 @@ projects:
     const cfg = loadConfig(testDir);
     expect(resolveProjectName('/some/project', cfg)).toBe('project');
   });
+
+  it('resolveProjectName returns unknown for empty path', () => {
+    const name = resolveProjectName('', { projects: {} });
+    expect(name).toBe('unknown');
+  });
 });
 
 describe('ensureConfigDir', () => {

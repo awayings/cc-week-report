@@ -34,5 +34,5 @@ function parseSimpleYaml(raw: string): AppConfig {
 }
 
 export function resolveProjectName(path: string, config: AppConfig): string {
-  return config.projects[path] ?? path.split('/').pop() ?? 'unknown';
+  return config.projects[path] ?? (path.split('/').pop() || 'unknown');
 }
