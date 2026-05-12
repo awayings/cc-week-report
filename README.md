@@ -147,8 +147,8 @@ Skill 会以彩色表格形式渲染终端报告，比裸 JSON 更易读。
 
 ```yaml
 projects:
-  /Users/edy/projects/yj/risk-center: 风控中心
-  /Users/edy/projects/me/tech/cc-week-report: 周报工具
+  /Users/edy/projects/risk-center: 风控中心
+  /Users/edy/projects/cc-week-report: 周报工具
 ```
 
 未配置的项目自动从路径末段取名为项目名。
