@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-1",
+  "project_path": "/Users/edy/projects/yj/risk-center",
+  "start_time": "2026-05-08T02:00:00.000Z",
+  "duration_minutes": 45,
+  "user_message_count": 8,
+  "assistant_message_count": 35,
+  "tool_counts": { "Read": 5, "Edit": 10, "Bash": 3 },
+  "input_tokens": 120000,
+  "output_tokens": 45000,
+  "first_prompt": "重构风控规则引擎",
+  "user_interruptions": 2,
+  "user_response_times": [],
+  "tool_errors": 1,
+  "tool_error_categories": { "Command Failed": 1 },
+  "user_message_timestamps": [
+    "2026-05-08T02:00:00.000Z",
+    "2026-05-08T02:05:00.000Z",
+    "2026-05-08T02:12:00.000Z",
+    "2026-05-08T02:18:00.000Z",
+    "2026-05-08T02:25:00.000Z",
+    "2026-05-08T02:32:00.000Z",
+    "2026-05-08T02:38:00.000Z",
+    "2026-05-08T02:45:00.000Z"
+  ]
+}
