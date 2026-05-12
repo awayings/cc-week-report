@@ -24,10 +24,10 @@ category: productivity
 ### Step 1: 运行采集脚本
 
 ```bash
-bash scripts/collect-weekly.sh [--days N | --week YYYY-MM-DD] [--force]
+cc-weekly [--days N | --week YYYY-MM-DD] [--force]
 ```
 
-脚本输出 `snapshot.json` 到 stdout。如果已有缓存且未用 `--force`，直接返回缓存数据，无需重新采集。
+命令输出 `snapshot.json` 到 stdout。如果已有缓存且未用 `--force`，直接返回缓存数据。
 
 脚本失败时，报告错误并停止。
 
