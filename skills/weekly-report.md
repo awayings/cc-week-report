@@ -51,8 +51,8 @@ cc-weekly [--days N | --week YYYY-MM-DD] [--force]
   AI 开发周报  <start> ~ <end>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Total: <N> sessions | Input <input_tokens> | Output <output_tokens>
-Avg Duration: <duration> min | Cost: $<cost> | I/O Ratio: <ratio>
+总数: <N> sessions | 输入token: <input_tokens> | 输出token: <output_tokens>
+平均时长: <duration> min | 成本: $<cost> | 输入输出比率: <ratio>
 
 ── 流畅度仪表板 ──
 
