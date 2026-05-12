@@ -37,3 +37,4 @@ rebel.xml
 
 
 /buss-marketing-admin/src/main/resources/logback-spring.xml
+tests/fixtures/*-tmp-*/

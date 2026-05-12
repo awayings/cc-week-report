@@ -39,9 +39,15 @@ export class ClaudeCollector implements Collector {
 
     for (const file of readdirSync(metaDir)) {
       if (!file.endsWith('.json')) continue;
-      const meta = JSON.parse(readFileSync(resolve(metaDir, file), 'utf-8')) as SessionMeta;
+      let meta: SessionMeta;
+      try {
+        meta = JSON.parse(readFileSync(resolve(metaDir, file), 'utf-8')) as SessionMeta;
+      } catch {
+        continue; // skip corrupt files
+      }
       const startTime = new Date(meta.start_time);
-      if (startTime < start || startTime > end) continue;
+      const endTime = new Date(startTime.getTime() + meta.duration_minutes * 60000);
+      if (endTime < start || startTime > end) continue;
 
       const totalToolCalls = Object.values(meta.tool_counts).reduce((a, b) => a + b, 0);
       let summary = '';
@@ -49,9 +55,13 @@ export class ClaudeCollector implements Collector {
 
       const facetPath = resolve(facetsDir, `${meta.session_id}.json`);
       if (existsSync(facetPath)) {
-        const facet = JSON.parse(readFileSync(facetPath, 'utf-8')) as FacetData;
-        summary = facet.brief_summary ?? '';
-        outcome = facet.outcome ?? null;
+        try {
+          const facet = JSON.parse(readFileSync(facetPath, 'utf-8')) as FacetData;
+          summary = facet.brief_summary ?? '';
+          outcome = facet.outcome ?? null;
+        } catch {
+          // skip corrupt facet
+        }
       }
 
       sessions.push({
@@ -60,7 +70,7 @@ export class ClaudeCollector implements Collector {
         projectName: resolveProjectName(meta.project_path, config),
         toolName: 'claude',
         startTime: meta.start_time,
-        endTime: new Date(startTime.getTime() + meta.duration_minutes * 60000).toISOString(),
+        endTime: endTime.toISOString(),
         durationMinutes: meta.duration_minutes,
         userMessageCount: meta.user_message_count,
         assistantMessageCount: meta.assistant_message_count,
