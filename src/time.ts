@@ -30,5 +30,5 @@ export function resolveTimeWindow(opts: TimeWindowOptions, now: Date = new Date(
 
 export function formatWeekLabel(range: TimeWindow): string {
   const fmt = 'YYYY-MM-DD';
-  return `${dayjs(range.start).format(fmt)} ~ ${dayjs(range.end).format(fmt)}`;
+  return `${dayjs(range.start).tz('Asia/Shanghai').format(fmt)} ~ ${dayjs(range.end).tz('Asia/Shanghai').format(fmt)}`;
 }

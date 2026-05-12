@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveTimeWindow } from '../../src/time.js';
+import { resolveTimeWindow, formatWeekLabel } from '../../src/time.js';
 
 describe('resolveTimeWindow', () => {
   it('defaults to past 7 days', () => {
@@ -21,5 +21,12 @@ describe('resolveTimeWindow', () => {
     const result = resolveTimeWindow({ week: '2026-05-04' });
     expect(result.start.toISOString()).toBe('2026-05-03T16:00:00.000Z');
     expect(result.end.toISOString()).toBe('2026-05-10T15:59:59.999Z');
+  });
+
+  it('formatWeekLabel returns Shanghai-local dates', () => {
+    const start = new Date('2026-05-03T16:00:00.000Z'); // Mon 00:00 Shanghai
+    const end = new Date('2026-05-10T15:59:59.999Z');   // Sun 23:59 Shanghai
+    const label = formatWeekLabel({ start, end });
+    expect(label).toBe('2026-05-04 ~ 2026-05-10');
   });
 });
