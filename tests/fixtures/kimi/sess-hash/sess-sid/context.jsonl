@@ -1,0 +1,2 @@
+{"role":"user","content":"重构风控规则引擎，将硬编码规则迁移到 DSL 表达式"}
+{"role":"assistant","content":"好的，我来分析现有代码结构..."}

@@ -1,0 +1,11 @@
+{"type":"metadata","protocol_version":"1.9"}
+{"timestamp":1776310348.01877,"message":{"type":"TurnBegin","payload":{"user_input":"重构风控规则引擎"}}}
+{"timestamp":1776310348.01958,"message":{"type":"StepBegin","payload":{"n":1}}}
+{"timestamp":1776310353.11973,"message":{"type":"ContentPart","payload":{"type":"think","think":"分析需求..."}}}
+{"timestamp":1776310353.83698,"message":{"type":"ToolCall","payload":{"type":"function","id":"tool_1","function":{"name":"ReadFile","arguments":"{}"}}}}
+{"timestamp":1776310360.0,"message":{"type":"ToolCall","payload":{"type":"function","id":"tool_2","function":{"name":"WriteFile","arguments":"{}"}}}}
+{"timestamp":1776310453.0,"message":{"type":"StepBegin","payload":{"n":2}}}
+{"timestamp":1776310653.0,"message":{"type":"ContentPart","payload":{"type":"think","think":"继续..."}}}
+{"timestamp":1776310753.0,"message":{"type":"ToolCall","payload":{"type":"function","id":"tool_3","function":{"name":"Shell","arguments":"{}"}}}}
+{"timestamp":1776310953.0,"message":{"type":"TurnBegin","payload":{"user_input":"不对，换个方案"}}}
+{"timestamp":1776311000.0,"message":{"type":"ToolCall","payload":{"type":"function","id":"tool_4","function":{"name":"Shell","arguments":"{}"}}}}
