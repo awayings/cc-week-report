@@ -78,8 +78,3 @@ export interface WeeklySnapshot {
 export interface AppConfig {
   projects: Record<string, string>;
 }
-
-export interface Collector {
-  name: string;
-  collect(start: Date, end: Date, config: AppConfig): Promise<SessionData[]>;
-}
